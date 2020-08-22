@@ -1,0 +1,61 @@
+behaviors:
+  TicTacToe:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 32
+      buffer_size: 512
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.3
+      lambd: 0.99
+      num_epoch: 7
+      learning_rate_schedule: constant
+    network_settings:
+      normalize: false
+      hidden_units: 64
+      num_layers: 2
+      vis_encode_type: simple
+      memory: null
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    init_path: null
+    keep_checkpoints: 5
+    checkpoint_interval: 500000
+    max_steps: 10000000
+    time_horizon: 32
+    summary_freq: 1000
+    threaded: true
+    self_play:
+      save_steps: 2000
+      team_change: 10000
+      swap_steps: 1000
+      window: 20
+      play_against_latest_model_ratio: 0.5
+      initial_elo: 1200.0
+    behavioral_cloning: null
+env_settings:
+  env_path: null
+  env_args: null
+  base_port: 5005
+  num_envs: 1
+  seed: -1
+engine_settings:
+  width: 84
+  height: 84
+  quality_level: 5
+  time_scale: 20
+  target_frame_rate: -1
+  capture_frame_rate: 60
+  no_graphics: false
+environment_parameters: null
+checkpoint_settings:
+  run_id: TicTacToe_12
+  initialize_from: null
+  load_model: false
+  resume: true
+  force: false
+  train_model: false
+  inference: false
+debug: false
