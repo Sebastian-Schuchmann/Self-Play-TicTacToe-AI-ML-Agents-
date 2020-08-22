@@ -22,7 +22,7 @@ A pretrained model is already included. Start up Unity, press play and try to wi
 
 ### Training
 
-Make sure you have the ML-Agents Python package installed. For guidance, check out this [page]([ml-agents/Installation.md at release_6_docs · Unity-Technologies/ml-agents · GitHub](https://github.com/Unity-Technologies/ml-agents/blob/release_6_docs/docs/Installation.md)). This project was tested with Python 3.6.8 on MacOS Catalina with the ML-Agents Python Package v.0.18.1 installed.
+Make sure you have the ML-Agents Python package installed. For guidance, check out this [page](https://github.com/Unity-Technologies/ml-agents/blob/release_6_docs/docs/Installation.md). This project was tested with Python 3.6.8 on MacOS Catalina with the ML-Agents Python Package v.0.18.1 installed.
 
 First open up the terminal and cd into the "runs" folder of the repo. 
 
@@ -44,7 +44,7 @@ This project will probably work with the next few release versions of ML-Agents 
 
 
 
-#### About me
+## About me
 
 Check out my Youtube: [Sebastian Schuchmann - YouTube](http://youtube.com/c/SebastianSchuchmannAI)
 
