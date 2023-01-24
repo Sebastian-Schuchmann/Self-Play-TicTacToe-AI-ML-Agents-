@@ -5,6 +5,7 @@ using Unity.MLAgents.Policies;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Unity.MLAgents.Actuators;
 
 public enum HeuristicMethod
 {
@@ -43,13 +44,17 @@ public class TicTacToeAgent : Agent
         }
     }
 
-    public override void OnActionReceived(float[] vectorAction)
+    public override void OnActionReceived(ActionBuffers actions)
     {
-        board.SelectField(Mathf.FloorToInt(vectorAction[0]), type);
+        board.SelectField(Mathf.FloorToInt(actions.DiscreteActions[0]), type);
     }
 
-    public override void CollectDiscreteActionMasks(DiscreteActionMasker actionMasker)
+    public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask)
     {
-        actionMasker.SetMask(0, board.GetOccupiedFields());
+        List<int> impossibleFields = board.GetOccupiedFields();
+        foreach (int field in impossibleFields)
+        { 
+            actionMask.SetActionEnabled(0, field, false);
+        }
     }
 }
