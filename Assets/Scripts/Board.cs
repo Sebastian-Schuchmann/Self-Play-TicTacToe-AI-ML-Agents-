@@ -144,7 +144,7 @@ public class Board : MonoBehaviour
         return availableFields.ToArray();
     }
 
-    public IEnumerable<int> GetOccupiedFields()
+    public List<int> GetOccupiedFields()
     {
         List<int> impossibleFields = new List<int>(9);
 
@@ -154,6 +154,6 @@ public class Board : MonoBehaviour
                 impossibleFields.Add(i);
         }
 
-        return impossibleFields.ToArray();
+        return impossibleFields;
     }
 }
