@@ -23,14 +23,15 @@ public class TicTacToeAgent : Agent
         type = GetComponent<BehaviorParameters>().TeamId == 0 ? Player.X : Player.O;
     }
 
-    public override void Heuristic(float[] actionsOut)
+    public override void Heuristic(in ActionBuffers actionsOut)
     {
         var availableOptions = (int[]) board.GetAvailableFields();
 
         if (heuristicMethod == HeuristicMethod.Random)
         {
             int randomField = availableOptions[Random.Range(0, availableOptions.Length)];
-            actionsOut[0] = randomField;
+            ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
+            discreteActions[0] = randomField;
         }
     }
 
